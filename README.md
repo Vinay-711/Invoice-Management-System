@@ -14,7 +14,7 @@ A Rust smart-contract prototype for creating invoices and recording their paid s
 
 ## Build and test
 
-Install a Rust toolchain compatible with the pinned Soroban SDK. From the repository root:
+Use Rust 1.90.0, pinned in `rust-toolchain.toml`, with the locked Soroban dependencies. The existing `ethnum` dependency does not compile with the latest moving stable toolchain; CI therefore uses the same explicit toolchain. From the repository root:
 
 ```sh
 cargo test --workspace
