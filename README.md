@@ -21,7 +21,7 @@ cargo test --workspace
 cargo build --release
 ```
 
-The workspace uses Soroban SDK 23.0.2 in [Cargo.toml](Cargo.toml). Contract tests are in [contracts/hello-world/src/test.rs](contracts/hello-world/src/test.rs); the package’s [Makefile](contracts/hello-world/Makefile) contains additional build targets. These commands are documented from the workspace, not claimed as executed by this README update.
+The workspace uses Soroban SDK 23.0.2 in [Cargo.toml](Cargo.toml). Contract tests are in [contracts/hello-world/src/test.rs](contracts/hello-world/src/test.rs); the package’s [Makefile](contracts/hello-world/Makefile) contains additional build targets. The contract test module covers positive-amount validation, invoice state/statistics, sequential IDs, seller/buyer authorization, wrong-buyer attempts, repeated payment and missing invoices. GitHub Actions runs `cargo test --locked --workspace` on pull requests and pushes to `main`.
 
 ## Layout
 

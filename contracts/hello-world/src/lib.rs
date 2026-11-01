@@ -51,6 +51,9 @@ impl InvoiceManagementContract {
         amount: i128, 
         description: String
     ) -> u64 {
+        // Reject invalid amounts before writing invoice records or statistics.
+        assert!(amount > 0, "Invoice amount must be positive");
+
         // Verify seller authorization
         seller.require_auth();
         
@@ -160,3 +163,6 @@ impl InvoiceManagementContract {
         })
     }
 }
+
+#[cfg(test)]
+mod test;
